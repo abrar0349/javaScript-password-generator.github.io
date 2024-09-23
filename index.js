@@ -6,6 +6,7 @@ let uppercase = document.getElementById('uppercase')
 let number = document.getElementById('number')
 let symbols = document.getElementById('symbols')
 let genBtn = document.getElementById('genBtn')
+let copyIcon = document.getElementById('copyIcon')
 
 
 // console.log(inputSlider,sliderValue,passBox,lowercase,uppercase,number,symbols,genBtn)
@@ -17,7 +18,7 @@ inputSlider.addEventListener('input', (e) => {
 })
 
 genBtn.addEventListener('click', () => {
-    console.log('hello')
+    // console.log('hello')
     passBox.value = generatPass()
 })
 
@@ -51,3 +52,28 @@ function generatPass(){
 
     return genPassword
 }
+
+copyIcon.addEventListener('click', () => {
+    // var isTimeoutActive = false;
+    if(passBox.value != "" || passBox.value.length >= 1){
+        navigator.clipboard.writeText(passBox.value)
+        copyIcon.title = "Password Copied";
+        copyIcon.innerHTML = "check";
+
+        // if (!isTimeoutActive) {
+        //     copyIconChange = setTimeout(() => {
+        //         copyIcon.innerHTML = "content_copy";
+        //         isTimeoutActive = false; // Reset the flag when timeout completes
+        //     }, 2000);
+        //     isTimeoutActive = true; // Set the flag to indicate the timeout is active
+        // }
+
+
+    }
+     setTimeout(() => {
+        copyIcon.innerHTML = "content_copy"
+    }, 2000);
+
+    
+    
+})

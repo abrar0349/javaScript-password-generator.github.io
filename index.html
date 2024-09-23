@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- external css link past below -->
     <link rel="stylesheet" href="./index.css">
+
+    <!-- Google font link past below  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Password Generator</title>
 </head>
 <body>
@@ -12,7 +16,10 @@
         <h1>Password Generator</h1>
 
         <div class="inputBox">
-            <input type="text" class="passBox" disabled>
+            <input type="text" value="Create your password" class="passBox" disabled>
+            <span class="material-symbols-outlined" id = "copyIcon">
+                content_copy
+            </span>
         </div>
 
         <input type="range" id = "inputSlider" min = '1' max="30" value="8">
@@ -24,25 +31,25 @@
 
         <div class="row">
             <label for="lowercase">Include LowerCase letter (a-z) </label>
-            <input type="checkbox" name="lowercase" id="lowercase">
+            <input type="checkbox" name="lowercase" id="lowercase" checked>
         </div>
 
         <div class="row">
             <label for="uppercase">Include UpperCase letter (A-Z) </label>
-            <input type="checkbox" name="lowercase" id="uppercase">
+            <input type="checkbox" name="lowercase" id="uppercase" checked>
         </div>
 
         <div class="row">
             <label for="number">Include Numbers letter (1-9) </label>
-            <input type="checkbox" name="lowercase" id="number">
+            <input type="checkbox" name="lowercase" id="number" checked>
         </div>
 
         <div class="row">
             <label for="symbols">Include Saymbols (@-*) </label>
-            <input type="checkbox" name="lowercase" id="symbols">
+            <input type="checkbox" name="lowercase" id="symbols" checked>
         </div>
 
-        <button id="genBtn"> Generate Password </button>
+        <button class="genBtn" id="genBtn"> Generate Password </button>
 
     </div>
 </body>
